@@ -4,5 +4,4 @@ import pandas as pd
 url="https://raw.githubusercontent.com/jeaggo/tc3068/master/Superstore.csv"
 df = pd.read_csv(url)
 
-plot = st.line_chart(df)
-plot
+st.line_chart(df)
