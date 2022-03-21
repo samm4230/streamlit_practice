@@ -1,23 +1,10 @@
 import streamlit as st
 import pandas as pd
+import matplotlib.pyplot as plt
+import seaborn as sns
 
-st.title('My first app!')
+url="https://raw.githubusercontent.com/jeaggo/tc3068/master/Superstore.csv"
+df = pd.read_csv(url)
 
-st.write('Hello world! :smile:')
-
-slide = st.slider('Pick a number!', 1, 15)
-slide
-
-button = st.button('Press here for cold')
-if button:
-    st.snow()
-
-button2 = st.button('Press here for helium')
-if button2:
-    st.balloons()
-
-cities = ['Manchester', 'Tokyo', 'Berlin', 'Brasilia', 'Ottawa', 'Wellington', 'Nairobi']
-st.selectbox('Choose a city', cities)
-
-check = st.checkbox('Tick')
-# if check:
+plot = sns.pairplot(df)
+st.pyplot(plot)
